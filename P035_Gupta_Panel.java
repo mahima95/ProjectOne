@@ -34,7 +34,7 @@ public class P035_Gupta_Panel implements Runnable {
         
         //creating frame and panel
         
-        frame= new JFrame("Panel Example");                        
+        frame= new JFrame("Group 2");                        
         panel=new JPanel();
         
         //Giving attributes to frame and panel
