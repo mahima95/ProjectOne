@@ -12,12 +12,12 @@ import javax.swing.*;
  *
  * @author mahimagupta
  */
-public class P035_Gupta_Panel implements Runnable {
+public class P035_Gupta_Panel extends JPanel implements Runnable {
 
  
        
       
-	static JPanel panel;
+	
 	JLabel labelName;
 	JLabel timeLabel;
 	Integer counter=0;
@@ -38,27 +38,27 @@ public class P035_Gupta_Panel implements Runnable {
         timeLabel.setFont(new Font("Papyrus", Font.BOLD, 15));
         
         //creating panel                        
-        panel=new JPanel();
+        
         
         //Giving attributes to  panel
         
     
-        panel.setSize(HEIGHT,WIDTH); 
+        this.setSize(HEIGHT,WIDTH); 
         
         /*Checking if integer passed is not even, means it's odd so set 
         background t light blue */
         
        if(val%2==0) {
 
-			panel.setBackground(Color.WHITE);
+			this.setBackground(Color.WHITE);
                      }
 		
         else         {
-			panel.setBackground(new Color(173,216,230));
+			this.setBackground(new Color(173,216,230));
 		}
 
-        panel.add(labelName);
-        panel.add(timeLabel);
+        this.add(labelName);
+        this.add(timeLabel);
        
         Thread t = new Thread(this);
         t.start();
@@ -93,12 +93,13 @@ public class P035_Gupta_Panel implements Runnable {
 
 	        }
 /*
+
 public static void main(String args[])  
         {  
         JFrame frame=new JFrame("");
-        new P035_Gupta_Panel(1);
+     
         
-        frame.add(panel); 
+      frame.add(new P035_Gupta_Panel(1));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400,400);    
         frame.setLayout(null);    
@@ -106,8 +107,7 @@ public static void main(String args[])
         	 
         	
         }
-	*/
-
+*/
 
       
 	   
