@@ -16,11 +16,16 @@ public class P035_Gupta_Panel implements Runnable {
 
  
        
-        JFrame frame;
-	JPanel panel;
+      
+	static JPanel panel;
 	JLabel labelName;
 	JLabel timeLabel;
 	Integer counter=0;
+        public final int HEIGHT = 100;
+        public final int WIDTH = 100;
+        public final int wait = 1000;
+        
+        
 	P035_Gupta_Panel(int val)  
         {  
 	
@@ -32,20 +37,13 @@ public class P035_Gupta_Panel implements Runnable {
         labelName.setFont(new Font("Papyrus", Font.BOLD, 15));
         timeLabel.setFont(new Font("Papyrus", Font.BOLD, 15));
         
-        //creating frame and panel
-        
-        frame= new JFrame("Group 2");                        
+        //creating panel                        
         panel=new JPanel();
         
-        //Giving attributes to frame and panel
+        //Giving attributes to  panel
         
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(panel);  
-        frame.setSize(400,400);    
-        frame.setLayout(null);    
-        frame.setVisible(true);
-        
-        panel.setSize(100,100); 
+    
+        panel.setSize(HEIGHT,WIDTH); 
         
         /*Checking if integer passed is not even, means it's odd so set 
         background t light blue */
@@ -70,20 +68,13 @@ public class P035_Gupta_Panel implements Runnable {
        
         } 
 	
-        public static void main(String args[])  
-        {  
-        
-        	 new P035_Gupta_Panel(2);
-        	
-        }
-
 		@Override
 		public void run() {
 			
 			while(true){
 	            try{
                         if(counter <10)
-                        { Thread.sleep(1000);
+                        { Thread.sleep(wait);
                             timeLabel.setText("            "+counter.toString()); //JLabel displaying numbers from 0-9
                             
 	               
@@ -95,11 +86,30 @@ public class P035_Gupta_Panel implements Runnable {
 	            }       catch (InterruptedException ex) {
                                 Logger.getLogger(P035_Gupta_Panel.class.getName()).log(Level.SEVERE, null, ex);
                                  System.out.println("Error! Stopping the timer...");
-                            }
-	               //    
+		    }   
 	            }
 	            }
+                  
+
 	        }
+/*
+public static void main(String args[])  
+        {  
+        JFrame frame=new JFrame("");
+        new P035_Gupta_Panel(1);
+        
+        frame.add(panel); 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400,400);    
+        frame.setLayout(null);    
+        frame.setVisible(true);
+        	 
+        	
+        }
+	*/
+
+
+      
 	   
 			
 		  
