@@ -13,10 +13,6 @@ import javax.swing.*;
  * @author mahimagupta
  */
 public class P035_Gupta_Panel extends JPanel implements Runnable {
-
- 
-       
-      
 	
 	JLabel labelName;
 	JLabel timeLabel;
@@ -35,20 +31,12 @@ public class P035_Gupta_Panel extends JPanel implements Runnable {
         
         //Resetting the font for both the variables
         labelName.setFont(new Font("Papyrus", Font.BOLD, 15));
-        timeLabel.setFont(new Font("Papyrus", Font.BOLD, 15));
-        
-        //creating panel                        
-        
+        timeLabel.setFont(new Font("Papyrus", Font.BOLD, 15));                             
         
         //Giving attributes to  panel
-        
-    
         this.setSize(HEIGHT,WIDTH); 
-        
-        /*Checking if integer passed is not even, means it's odd so set 
-        background t light blue */
-        
-       if(val%2==0) {
+       
+         if(val%2==0) {
 
 			this.setBackground(Color.WHITE);
                      }
@@ -57,15 +45,14 @@ public class P035_Gupta_Panel extends JPanel implements Runnable {
 			this.setBackground(new Color(173,216,230));
 		}
 
+
         this.add(labelName);
         this.add(timeLabel);
-       
+		
+      //Counter for displaying 0 to 9
         Thread t = new Thread(this);
         t.start();
-        
-        
-        
-       
+           
         } 
 	
 		@Override
